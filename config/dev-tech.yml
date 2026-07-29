@@ -1,0 +1,146 @@
+- name: "Dev & Tech"
+  columns:
+    - size: "small"
+      widgets:
+        - type: "bookmarks"
+          title: "Quick Links"
+          groups:
+            - title: "Dev & AI Platforms"
+              color: "200 60 55"
+              links:
+                - title: "GitHub"
+                  url: "https://github.com"
+                  icon: "si:github"
+                - title: "Hugging Face"
+                  url: "https://huggingface.co"
+                  icon: "si:huggingface"
+                - title: "ChatGPT"
+                  url: "https://chatgpt.com"
+                  icon: "si:openai"
+                - title: "Perplexity"
+                  url: "https://www.perplexity.ai"
+                  icon: "si:perplexity"
+                - title: "Ollama"
+                  url: "https://ollama.com"
+                  icon: "si:ollama"
+
+            - title: "Tools & Docs"
+              color: "160 50 50"
+              links:
+                - title: "MDN Web Docs"
+                  url: "https://developer.mozilla.org"
+                  icon: "si:mdnwebdocs"
+                - title: "DevDocs"
+                  url: "https://devdocs.io"
+                  icon: "mdi:book-open-outline"
+                - title: "Stack Overflow"
+                  url: "https://stackoverflow.com"
+                  icon: "si:stackoverflow"
+                - title: "Regex101"
+                  url: "https://regex101.com"
+                  icon: "mdi:regex"
+                - title: "JSON Formatter"
+                  url: "https://jsonformatter.curiousconcept.com"
+                  icon: "mdi:code-json"
+
+            - title: "Self-Hosted"
+              color: "270 50 60"
+              links:
+                - title: "r/selfhosted"
+                  url: "https://www.reddit.com/r/selfhosted"
+                  icon: "si:reddit"
+                - title: "Awesome Selfhosted"
+                  url: "https://awesome-selfhosted.net"
+                  icon: "mdi:star-outline"
+                - title: "selfh.st"
+                  url: "https://selfh.st"
+                  icon: "mdi:server"
+                - title: "LinuxServer.io"
+                  url: "https://www.linuxserver.io"
+                  icon: "si:linuxserver"
+
+        - type: "releases"
+          title: "Latest Releases"
+          cache: 6h
+          collapse-after: 6
+          show-source-icon: true
+          repositories:
+            - glanceapp/glance
+            - ollama/ollama
+            - immich-app/immich
+            - go-gitea/gitea
+            - dani-garcia/vaultwarden
+            - AdguardTeam/AdGuardHome
+
+    - size: "full"
+      widgets:
+        - type: "videos"
+          title: "Tech Creators"
+          style: "grid-cards"
+          collapse-after-rows: 2
+          channels:
+            - "UCsBjURrPoezykLs9EqgamOA" # Fireship
+            - "UC29ju8bIPH5as8OGnQzwJyA" # Traversy Media
+            - "UCXuqSBlHAE6Xw-yeJA0Tunw" # Linus Tech Tips
+            - "UCR-DXc1voovS8nhAvccRZhg" # Jeff Geerling
+            - "UCVls1GmFKf6WlTraIb_IaJg" # DistroTube
+            - "UCHnyfMqiRRG1u-2MsSQLbXA" # Veritasium
+            - "UCWX3yGbODk2pMOaFnFMKiKg" # NetworkChuck
+            - "UC7YOGHUfC1Tb2alpyB9-SGQ" # Theo - t3.gg
+
+        - type: "group"
+          title: "Community"
+          widgets:
+            - type: "rss"
+              title: "Self-Hosted & LocalLLaMA"
+              style: "horizontal-cards"
+              limit: 12
+              collapse-after: 4
+              feeds:
+                - url: "https://www.reddit.com/r/selfhosted.rss"
+                  title: "r/selfhosted"
+                - url: "https://www.reddit.com/r/LocalLLaMA.rss"
+                  title: "r/LocalLLaMA"
+                - url: "https://www.reddit.com/r/homelab.rss"
+                  title: "r/homelab"
+                - url: "https://www.reddit.com/r/opensource.rss"
+                  title: "r/opensource"
+
+            - type: "rss"
+              title: "Dev Blogs"
+              style: "detailed-list"
+              limit: 10
+              collapse-after: 5
+              feeds:
+                - url: "https://dev.to/feed"
+                  title: "DEV Community"
+                - url: "https://news.ycombinator.com/rss"
+                  title: "Hacker News"
+                - url: "https://blog.github.com/all.atom"
+                  title: "GitHub Blog"
+
+    - size: "small"
+      widgets:
+        - type: "rss"
+          title: "Tech News"
+          style: "vertical-list"
+          limit: 15
+          collapse-after: 8
+          feeds:
+            - url: "https://news.ycombinator.com/rss"
+              title: "Hacker News"
+            - url: "https://dev.to/feed"
+              title: "DEV Community"
+            - url: "https://www.wired.com/feed/rss"
+              title: "Wired"
+            - url: "https://feeds.arstechnica.com/arstechnica/index"
+              title: "Ars Technica"
+            - url: "https://www.theverge.com/rss/index.xml"
+              title: "The Verge"
+
+        - type: "reddit"
+          subreddit: "technology"
+          style: "vertical-cards"
+          show-thumbnails: true
+          collapse-after: 5
+          sort-by: "hot"

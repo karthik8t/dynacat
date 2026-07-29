@@ -1,0 +1,106 @@
+- name: "Home"
+  columns:
+    - size: "full"
+      widgets:
+        - type: "search"
+          autofocus: true
+          search-engine: google
+          new-tab: true
+          placeholder: "Search the web..."
+          bangs:
+            - title: "YouTube"
+              shortcut: "!yt"
+              url: "https://www.youtube.com/results?search_query={QUERY}"
+            - title: "GitHub"
+              shortcut: "!gh"
+              url: "https://github.com/search?q={QUERY}"
+            - title: "Reddit"
+              shortcut: "!r"
+              url: "https://www.reddit.com/search/?q={QUERY}"
+            - title: "DuckDuckGo"
+              shortcut: "!d"
+              url: "https://duckduckgo.com/?q={QUERY}"
+
+        - type: "docker-containers"
+          title: "Running Services"
+          collapse-after: 12
+          hide-by-default: false
+          format-container-names: true
+          # ------------------------------------------------------------
+          # URL links per container — set these via Docker labels OR via
+          # the 'containers' map below (key = container name on host).
+          #
+          # Docker label approach (recommended — set on each service):
+          #   labels:
+          #     glance.name: "Jellyfin"
+          #     glance.icon: "si:jellyfin"
+          #     glance.url: "http://localhost:8096"
+          #     glance.description: "Media server"
+          #
+          # Static fallback — edit the entries below to match your
+          # actual container names and ports:
+          # ------------------------------------------------------------
+          containers:
+            dynacat:
+              name: "Dynacat Dashboard"
+              icon: "si:glance"
+              url: "http://localhost:8080"
+              description: "This dashboard"
+            portainer:
+              name: "Portainer"
+              icon: "si:portainer"
+              url: "http://localhost:9000"
+              description: "Docker management UI"
+            jellyfin:
+              name: "Jellyfin"
+              icon: "si:jellyfin"
+              url: "http://localhost:8096"
+              description: "Media server"
+            immich:
+              name: "Immich"
+              icon: "si:immich"
+              url: "http://localhost:2283"
+              description: "Photo & video backup"
+            gitea:
+              name: "Gitea"
+              icon: "si:gitea"
+              url: "http://localhost:3000"
+              description: "Self-hosted git"
+            vaultwarden:
+              name: "Vaultwarden"
+              icon: "si:vaultwarden"
+              url: "http://localhost:8181"
+              description: "Password manager"
+            adguardhome:
+              name: "AdGuard Home"
+              icon: "si:adguard"
+              url: "http://localhost:3001"
+              description: "DNS ad-blocking"
+            nextcloud:
+              name: "Nextcloud"
+              icon: "si:nextcloud"
+              url: "http://localhost:8888"
+              description: "File sync & sharing"
+
+        - type: "monitor"
+          title: "Service Health"
+          cache: 1m
+          sites:
+            - title: "Portainer"
+              url: "http://localhost:9000"
+              icon: "si:portainer"
+            - title: "Jellyfin"
+              url: "http://localhost:8096"
+              icon: "si:jellyfin"
+            - title: "Gitea"
+              url: "http://localhost:3000"
+              icon: "si:gitea"
+            - title: "Vaultwarden"
+              url: "http://localhost:8181"
+              icon: "si:vaultwarden"
+            - title: "AdGuard Home"
+              url: "http://localhost:3001"
+              icon: "si:adguard"
+            - title: "Nextcloud"
+              url: "http://localhost:8888"
+              icon: "si:nextcloud"

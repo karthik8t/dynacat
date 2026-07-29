@@ -1,0 +1,82 @@
+- name: "Markets"
+  columns:
+    - size: "small"
+      widgets:
+        - type: "markets"
+          title: "Crypto"
+          chart-link-template: "https://www.tradingview.com/chart/?symbol={SYMBOL}"
+          markets:
+            - symbol: "BTC-USD"
+              name: "Bitcoin"
+            - symbol: "ETH-USD"
+              name: "Ethereum"
+            - symbol: "SOL-USD"
+              name: "Solana"
+            - symbol: "BNB-USD"
+              name: "BNB"
+
+        - type: "markets"
+          title: "Tech Equities"
+          sort-by: "absolute-change"
+          chart-link-template: "https://www.tradingview.com/chart/?symbol={SYMBOL}"
+          symbol-link-template: "https://finance.yahoo.com/quote/{SYMBOL}"
+          markets:
+            - symbol: "NVDA"
+              name: "NVIDIA"
+            - symbol: "MSFT"
+              name: "Microsoft"
+            - symbol: "AAPL"
+              name: "Apple"
+            - symbol: "GOOGL"
+              name: "Alphabet"
+            - symbol: "META"
+              name: "Meta"
+            - symbol: "AMZN"
+              name: "Amazon"
+            - symbol: "TSM"
+              name: "TSMC"
+
+        - type: "markets"
+          title: "Indices & ETFs"
+          chart-link-template: "https://www.tradingview.com/chart/?symbol={SYMBOL}"
+          markets:
+            - symbol: "SPY"
+              name: "S&P 500"
+            - symbol: "QQQ"
+              name: "NASDAQ 100"
+            - symbol: "VTI"
+              name: "Total Market"
+            - symbol: "GC=F"
+              name: "Gold"
+            - symbol: "CL=F"
+              name: "Crude Oil"
+
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "Market News"
+          style: "horizontal-cards"
+          limit: 12
+          collapse-after: 6
+          feeds:
+            - url: "https://feeds.bloomberg.com/markets/news.rss"
+              title: "Bloomberg Markets"
+            - url: "https://feeds.reuters.com/reuters/businessNews"
+              title: "Reuters Business"
+            - url: "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
+              title: "WSJ Markets"
+
+        - type: "rss"
+          title: "Crypto & Finance Community"
+          style: "vertical-list"
+          limit: 10
+          collapse-after: 5
+          feeds:
+            - url: "https://www.reddit.com/r/wallstreetbets.rss"
+              title: "r/wallstreetbets"
+            - url: "https://www.reddit.com/r/investing.rss"
+              title: "r/investing"
+            - url: "https://www.reddit.com/r/CryptoCurrency.rss"
+              title: "r/CryptoCurrency"
+            - url: "https://www.reddit.com/r/personalfinance.rss"
+              title: "r/personalfinance"
