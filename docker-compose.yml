@@ -1,14 +1,18 @@
 services:
   dynacat:
     container_name: dynacat
-    image: panonim/dynacat
+    image: ghcr.io/panonim/dynacat:latest
     restart: unless-stopped
     volumes:
       - ./config:/app/config
       - ./assets:/app/assets
       - /etc/localtime:/etc/localtime:ro
-      # Optionally, also mount docker socket if you want to use the docker containers widget
-      # - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Docker socket — required for the docker-containers widget to show
+      # live container status and navigate to their ports
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
-      - 9666:8080
+      - "9666:8080"
     env_file: .env
+    # Ensure dynacat can read the socket without root
+    group_add:
+      - "999"
