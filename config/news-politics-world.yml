@@ -1,48 +1,44 @@
 - name: "Politics & World"
   columns:
-    # ── Left: India Politics Reddit ───────────────────────────────────────
+    # ── Left: Opinion & quick scan — text-heavy sidebar ──────────────────
     - size: "small"
       widgets:
-        - type: "reddit"
-          subreddit: "IndiaSpeaks"
-          style: "vertical-cards"
-          show-thumbnails: true
-          show-flairs: true
-          limit: 10
-          collapse-after: -1
-          sort-by: "hot"
-
-        - type: "reddit"
-          subreddit: "india"
-          style: "vertical-cards"
-          show-thumbnails: true
+        - type: "rss"
+          title: "✍️ Opinion & Analysis"
+          style: "detailed-list"
           limit: 8
           collapse-after: 5
-          sort-by: "hot"
+          feeds:
+            - url: "https://www.thehindu.com/opinion/feeder/default.rss"
+              title: "The Hindu"
+            - url: "https://www.theguardian.com/commentisfree/rss"
+              title: "The Guardian"
+            - url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+              title: "BBC"
 
-    # ── Center: Politics & World Affairs Cards ────────────────────────────
-    - size: "full"
-      widgets:
         - type: "rss"
-          title: "🗳️ India Politics"
-          style: "horizontal-cards"
-          thumbnail-height: 13
-          limit: 12
+          title: "⚡ Politics Briefs"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 15
           collapse-after: -1
           feeds:
             - url: "https://www.thehindu.com/news/national/politics/feeder/default.rss"
-              title: "The Hindu · Politics"
+              title: "The Hindu Politics"
             - url: "https://feeds.feedburner.com/ndtvnews-india-news"
-              title: "NDTV India"
+              title: "NDTV"
             - url: "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
-              title: "TOI India"
+              title: "TOI"
             - url: "https://telanganatoday.com/feed"
               title: "Telangana Today"
 
+    # ── Center: Big world affairs hero cards ──────────────────────────────
+    - size: "full"
+      widgets:
         - type: "rss"
           title: "🌏 World Affairs"
           style: "horizontal-cards"
-          thumbnail-height: 13
+          thumbnail-height: 15
           limit: 12
           collapse-after: -1
           feeds:
@@ -51,73 +47,55 @@
             - url: "https://feeds.bbci.co.uk/news/world/rss.xml"
               title: "BBC World"
             - url: "https://feeds.reuters.com/reuters/worldNews"
-              title: "Reuters World"
+              title: "Reuters"
             - url: "https://www.theguardian.com/world/rss"
               title: "The Guardian"
             - url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
               title: "NYT World"
 
-        - type: "group"
-          title: "🌐 Regions & Topics"
+        - type: "rss"
+          title: "🗳️ India Politics"
+          style: "horizontal-cards-2"
+          card-height: 25
+          limit: 8
+          collapse-after: -1
+          feeds:
+            - url: "https://www.thehindu.com/news/national/politics/feeder/default.rss"
+              title: "The Hindu"
+            - url: "https://feeds.feedburner.com/ndtvnews-india-news"
+              title: "NDTV India"
+            - url: "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
+              title: "TOI India"
+
+        - type: "split-column"
           widgets:
             - type: "rss"
-              title: "Asia & South Asia"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
+              title: "🌏 Asia & South Asia"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
               feeds:
                 - url: "https://feeds.bbci.co.uk/news/world/asia/rss.xml"
                   title: "BBC Asia"
                 - url: "https://www.thehindu.com/news/international/feeder/default.rss"
                   title: "The Hindu International"
-                - url: "https://www.reddit.com/r/southasia.rss"
-                  title: "r/southasia"
 
             - type: "rss"
-              title: "US & Europe"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
+              title: "🇺🇸 US & Europe"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
               feeds:
                 - url: "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml"
-                  title: "BBC · US & Canada"
+                  title: "BBC US & Canada"
                 - url: "https://feeds.bbci.co.uk/news/world/europe/rss.xml"
                   title: "BBC Europe"
                 - url: "https://feeds.reuters.com/Reuters/PoliticsNews"
                   title: "Reuters Politics"
-                - url: "https://www.reddit.com/r/worldnews.rss"
-                  title: "r/worldnews"
 
-            - type: "rss"
-              title: "Middle East & Africa"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml"
-                  title: "BBC Middle East"
-                - url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml"
-                  title: "BBC Africa"
-                - url: "https://www.aljazeera.com/xml/rss/all.xml"
-                  title: "Al Jazeera"
-
-            - type: "rss"
-              title: "Defence & Security"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://feeds.reuters.com/reuters/worldNews"
-                  title: "Reuters World"
-                - url: "https://www.reddit.com/r/geopolitics.rss"
-                  title: "r/geopolitics"
-                - url: "https://www.reddit.com/r/CredibleDefense.rss"
-                  title: "r/CredibleDefense"
-
+    # ── Right: Regional + Economy in compact format ───────────────────────
+    - size: "full"
+      widgets:
         - type: "rss"
           title: "💰 Economy & Policy"
           style: "horizontal-cards"
@@ -131,30 +109,40 @@
               title: "NDTV Business"
             - url: "https://feeds.reuters.com/reuters/businessNews"
               title: "Reuters Business"
-            - url: "https://www.reddit.com/r/economics.rss"
-              title: "r/economics"
 
-    # ── Right: Opinions & Discussion ─────────────────────────────────────
-    - size: "small"
-      widgets:
-        - type: "reddit"
-          subreddit: "geopolitics"
-          style: "vertical-cards"
-          show-thumbnails: true
-          show-flairs: true
-          limit: 10
-          collapse-after: -1
-          sort-by: "hot"
+        - type: "split-column"
+          widgets:
+            - type: "rss"
+              title: "🕌 Middle East"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
+              feeds:
+                - url: "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml"
+                  title: "BBC Middle East"
+                - url: "https://www.aljazeera.com/xml/rss/all.xml"
+                  title: "Al Jazeera"
+
+            - type: "rss"
+              title: "🌍 Africa"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
+              feeds:
+                - url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml"
+                  title: "BBC Africa"
+                - url: "https://www.theguardian.com/world/africa/rss"
+                  title: "Guardian Africa"
 
         - type: "rss"
-          title: "Opinion & Analysis"
-          style: "vertical-list"
-          limit: 12
+          title: "🛡️ Defence & Geopolitics"
+          style: "detailed-list"
+          limit: 10
           collapse-after: 6
           feeds:
-            - url: "https://www.thehindu.com/opinion/feeder/default.rss"
-              title: "The Hindu Opinion"
-            - url: "https://www.theguardian.com/commentisfree/rss"
-              title: "Guardian Opinion"
+            - url: "https://feeds.reuters.com/reuters/worldNews"
+              title: "Reuters World"
+            - url: "https://www.thehindu.com/news/national/feeder/default.rss"
+              title: "The Hindu National"
             - url: "https://feeds.bbci.co.uk/news/world/rss.xml"
-              title: "BBC Analysis"
+              title: "BBC World"

@@ -1,32 +1,12 @@
 - name: "Sports & Games"
   columns:
-    # ── Left: Cricket & India Sports ─────────────────────────────────────
-    - size: "small"
-      widgets:
-        - type: "reddit"
-          subreddit: "cricket"
-          style: "vertical-cards"
-          show-thumbnails: true
-          show-flairs: true
-          limit: 10
-          collapse-after: -1
-          sort-by: "hot"
-
-        - type: "reddit"
-          subreddit: "IndianFootball"
-          style: "vertical-cards"
-          show-thumbnails: true
-          limit: 8
-          collapse-after: 5
-          sort-by: "hot"
-
-    # ── Center: Sports News Cards ─────────────────────────────────────────
+    # ── Left: Cricket hero + compact India sports list ────────────────────
     - size: "full"
       widgets:
         - type: "rss"
           title: "🏏 Cricket"
           style: "horizontal-cards"
-          thumbnail-height: 13
+          thumbnail-height: 15
           limit: 10
           collapse-after: -1
           feeds:
@@ -37,99 +17,84 @@
             - url: "https://timesofindia.indiatimes.com/rssfeeds/4719161.cms"
               title: "TOI Cricket"
 
-        - type: "group"
-          title: "⚽ More Sports"
+        - type: "split-column"
           widgets:
             - type: "rss"
-              title: "Football / Soccer"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
+              title: "⚽ Football"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
               feeds:
                 - url: "https://feeds.bbci.co.uk/sport/football/rss.xml"
                   title: "BBC Football"
                 - url: "https://www.theguardian.com/football/rss"
                   title: "Guardian Football"
-                - url: "https://www.reddit.com/r/soccer.rss"
-                  title: "r/soccer"
-
-            - type: "rss"
-              title: "Formula 1"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://www.autosport.com/rss/feed/f1"
-                  title: "Autosport F1"
-                - url: "https://www.reddit.com/r/formula1.rss"
-                  title: "r/formula1"
-                - url: "https://feeds.bbci.co.uk/sport/formula1/rss.xml"
-                  title: "BBC F1"
-
-            - type: "rss"
-              title: "Basketball & NBA"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://www.reddit.com/r/nba.rss"
-                  title: "r/nba"
-                - url: "https://feeds.bbci.co.uk/sport/basketball/rss.xml"
-                  title: "BBC Basketball"
-
-            - type: "rss"
-              title: "General Sports"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://feeds.bbci.co.uk/sport/rss.xml"
-                  title: "BBC Sport"
-                - url: "https://www.espn.com/espn/rss/news"
-                  title: "ESPN"
-                - url: "https://www.reddit.com/r/sports.rss"
-                  title: "r/sports"
                 - url: "https://timesofindia.indiatimes.com/rssfeeds/4719148.cms"
                   title: "TOI Sports"
 
+            - type: "rss"
+              title: "🏎️ Formula 1"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
+              feeds:
+                - url: "https://www.autosport.com/rss/feed/f1"
+                  title: "Autosport F1"
+                - url: "https://feeds.bbci.co.uk/sport/formula1/rss.xml"
+                  title: "BBC F1"
+                - url: "https://www.motorsport.com/rss/f1/news/"
+                  title: "Motorsport.com F1"
+
         - type: "rss"
-          title: "🎮 Gaming"
-          style: "horizontal-cards"
-          thumbnail-height: 13
-          limit: 10
+          title: "🌐 World Sport"
+          style: "horizontal-cards-2"
+          card-height: 24
+          limit: 8
           collapse-after: -1
+          feeds:
+            - url: "https://feeds.bbci.co.uk/sport/rss.xml"
+              title: "BBC Sport"
+            - url: "https://www.espn.com/espn/rss/news"
+              title: "ESPN"
+            - url: "https://www.skysports.com/rss/12040"
+              title: "Sky Sports"
+
+    # ── Right: Gaming — detailed with sidebar feel ────────────────────────
+    - size: "small"
+      widgets:
+        - type: "rss"
+          title: "🎮 Gaming Headlines"
+          style: "detailed-list"
+          limit: 10
+          collapse-after: 6
           feeds:
             - url: "https://www.ign.com/articles.rss"
               title: "IGN"
             - url: "https://www.gamespot.com/feeds/mashup/"
               title: "GameSpot"
-            - url: "https://www.reddit.com/r/gaming.rss"
-              title: "r/gaming"
-            - url: "https://www.reddit.com/r/pcgaming.rss"
-              title: "r/pcgaming"
-            - url: "https://www.reddit.com/r/Games.rss"
-              title: "r/Games"
+            - url: "https://www.eurogamer.net/feed"
+              title: "Eurogamer"
 
-    # ── Right: Esports & Reddit ───────────────────────────────────────────
-    - size: "small"
-      widgets:
-        - type: "reddit"
-          subreddit: "gaming"
-          style: "vertical-cards"
-          show-thumbnails: true
-          show-flairs: true
-          limit: 10
-          collapse-after: -1
-          sort-by: "hot"
+        - type: "rss"
+          title: "🕹️ PC & Indie"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 12
+          collapse-after: 7
+          feeds:
+            - url: "https://www.rockpapershotgun.com/feed"
+              title: "Rock Paper Shotgun"
+            - url: "https://www.pcgamer.com/rss/"
+              title: "PC Gamer"
 
-        - type: "reddit"
-          subreddit: "GlobalOffensive"
-          style: "vertical-cards"
-          show-thumbnails: true
+        - type: "rss"
+          title: "📱 Mobile Gaming"
+          style: "vertical-list"
+          single-line-titles: true
           limit: 8
           collapse-after: 5
-          sort-by: "hot"
+          feeds:
+            - url: "https://toucharcade.com/feed/"
+              title: "TouchArcade"
+            - url: "https://www.pocketgamer.com/rss/"
+              title: "Pocket Gamer"

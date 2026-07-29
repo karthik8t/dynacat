@@ -1,32 +1,12 @@
 - name: "Entertainment"
   columns:
-    # ── Left: Movies & Reddit ─────────────────────────────────────────────
-    - size: "small"
-      widgets:
-        - type: "reddit"
-          subreddit: "movies"
-          style: "vertical-cards"
-          show-thumbnails: true
-          show-flairs: true
-          limit: 10
-          collapse-after: -1
-          sort-by: "hot"
-
-        - type: "reddit"
-          subreddit: "tollywood"
-          style: "vertical-cards"
-          show-thumbnails: true
-          limit: 8
-          collapse-after: 5
-          sort-by: "hot"
-
-    # ── Center: Cards Feed ────────────────────────────────────────────────
+    # ── Left: Big movies & TV cards ───────────────────────────────────────
     - size: "full"
       widgets:
         - type: "rss"
           title: "🎬 Movies & TV"
           style: "horizontal-cards"
-          thumbnail-height: 13
+          thumbnail-height: 15
           limit: 12
           collapse-after: -1
           feeds:
@@ -36,142 +16,135 @@
               title: "Deadline"
             - url: "https://www.hollywoodreporter.com/feed/"
               title: "Hollywood Reporter"
-            - url: "https://www.reddit.com/r/movies.rss"
-              title: "r/movies"
-            - url: "https://www.reddit.com/r/television.rss"
-              title: "r/television"
+            - url: "https://www.theguardian.com/film/rss"
+              title: "Guardian Film"
 
-        - type: "group"
-          title: "🎵 Music, OTT & More"
+        - type: "rss"
+          title: "🎵 Music"
+          style: "horizontal-cards-2"
+          card-height: 24
+          limit: 8
+          collapse-after: -1
+          feeds:
+            - url: "https://www.rollingstone.com/music/feed/"
+              title: "Rolling Stone"
+            - url: "https://pitchfork.com/rss/news/"
+              title: "Pitchfork"
+            - url: "https://www.nme.com/feed"
+              title: "NME"
+
+        - type: "split-column"
           widgets:
             - type: "rss"
-              title: "Music"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
+              title: "🎌 Anime"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
               feeds:
-                - url: "https://www.rollingstone.com/music/feed/"
-                  title: "Rolling Stone"
-                - url: "https://pitchfork.com/rss/news/"
-                  title: "Pitchfork"
-                - url: "https://www.reddit.com/r/Music.rss"
-                  title: "r/Music"
+                - url: "https://www.animenewsnetwork.com/all/rss.xml?ann-edition=us"
+                  title: "Anime News Network"
+                - url: "https://anitrendz.net/news/feed/"
+                  title: "AniTrendz"
 
             - type: "rss"
-              title: "Bollywood & Tollywood"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
+              title: "🎭 Bollywood & Tollywood"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
               feeds:
                 - url: "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms"
                   title: "TOI Entertainment"
                 - url: "https://feeds.feedburner.com/ndtvnews-entertainment"
                   title: "NDTV Entertainment"
                 - url: "https://www.thehindu.com/entertainment/feeder/default.rss"
-                  title: "The Hindu Entertainment"
+                  title: "The Hindu"
 
-            - type: "rss"
-              title: "Anime & Animation"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://www.reddit.com/r/anime.rss"
-                  title: "r/anime"
-                - url: "https://www.animenewsnetwork.com/all/rss.xml?ann-edition=us"
-                  title: "Anime News Network"
+    # ── Center: Education, Science, Vehicles ─────────────────────────────
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "🚗 Vehicles & EVs"
+          style: "horizontal-cards"
+          thumbnail-height: 14
+          limit: 10
+          collapse-after: -1
+          feeds:
+            - url: "https://electrek.co/feed/"
+              title: "Electrek"
+            - url: "https://www.autocar.co.uk/rss"
+              title: "Autocar"
+            - url: "https://www.motortrend.com/feeds/rss/"
+              title: "MotorTrend"
+            - url: "https://www.caranddriver.com/rss/all.xml/"
+              title: "Car and Driver"
 
-        - type: "group"
-          title: "📚 Education & Learning"
+        - type: "split-column"
           widgets:
             - type: "rss"
-              title: "Education News"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
+              title: "🔬 Science & Space"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
+              feeds:
+                - url: "https://www.sciencedaily.com/rss/top/science.xml"
+                  title: "Science Daily"
+                - url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+                  title: "BBC Science"
+                - url: "https://www.newscientist.com/feed/home/"
+                  title: "New Scientist"
+
+            - type: "rss"
+              title: "📚 Education"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
               feeds:
                 - url: "https://www.thehindu.com/education/feeder/default.rss"
                   title: "The Hindu Education"
                 - url: "https://timesofindia.indiatimes.com/rssfeeds/913168846.cms"
                   title: "TOI Education"
-                - url: "https://www.reddit.com/r/India_StudyAbroad.rss"
-                  title: "r/India_StudyAbroad"
-                - url: "https://www.reddit.com/r/learnprogramming.rss"
-                  title: "r/learnprogramming"
 
-            - type: "rss"
-              title: "Science & Space"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://www.sciencedaily.com/rss/top/science.xml"
-                  title: "Science Daily"
-                - url: "https://www.reddit.com/r/science.rss"
-                  title: "r/science"
-                - url: "https://www.reddit.com/r/space.rss"
-                  title: "r/space"
-                - url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
-                  title: "BBC Science"
+        - type: "rss"
+          title: "💻 Tech & Gadgets"
+          style: "horizontal-cards-2"
+          card-height: 24
+          limit: 8
+          collapse-after: -1
+          feeds:
+            - url: "https://www.theverge.com/rss/index.xml"
+              title: "The Verge"
+            - url: "https://feeds.arstechnica.com/arstechnica/index"
+              title: "Ars Technica"
+            - url: "https://www.wired.com/feed/rss"
+              title: "Wired"
 
-        - type: "group"
-          title: "🚗 Vehicles & Technology"
-          widgets:
-            - type: "rss"
-              title: "Cars & EVs"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://www.autocar.co.uk/rss"
-                  title: "Autocar"
-                - url: "https://electrek.co/feed/"
-                  title: "Electrek (EVs)"
-                - url: "https://www.motortrend.com/feeds/rss/"
-                  title: "MotorTrend"
-                - url: "https://www.reddit.com/r/cars.rss"
-                  title: "r/cars"
-                - url: "https://www.reddit.com/r/electricvehicles.rss"
-                  title: "r/electricvehicles"
-
-            - type: "rss"
-              title: "Tech & Gadgets"
-              style: "horizontal-cards"
-              thumbnail-height: 13
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://www.theverge.com/rss/index.xml"
-                  title: "The Verge"
-                - url: "https://feeds.arstechnica.com/arstechnica/index"
-                  title: "Ars Technica"
-                - url: "https://www.wired.com/feed/rss"
-                  title: "Wired"
-                - url: "https://www.reddit.com/r/gadgets.rss"
-                  title: "r/gadgets"
-
-    # ── Right: Community Reddit ───────────────────────────────────────────
+    # ── Right: Quick scan sidebar ─────────────────────────────────────────
     - size: "small"
       widgets:
-        - type: "reddit"
-          subreddit: "television"
-          style: "vertical-cards"
-          show-thumbnails: true
-          show-flairs: true
-          limit: 10
-          collapse-after: -1
-          sort-by: "hot"
+        - type: "rss"
+          title: "🍿 Streaming & OTT"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 12
+          collapse-after: 7
+          feeds:
+            - url: "https://variety.com/v/tv/feed/"
+              title: "Variety TV"
+            - url: "https://deadline.com/category/film/feed/"
+              title: "Deadline Film"
+            - url: "https://www.theguardian.com/tv-and-radio/rss"
+              title: "Guardian TV"
 
-        - type: "reddit"
-          subreddit: "cars"
-          style: "vertical-cards"
-          show-thumbnails: true
-          limit: 8
-          collapse-after: 5
-          sort-by: "hot"
+        - type: "rss"
+          title: "🌐 Culture & Lifestyle"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 10
+          collapse-after: 6
+          feeds:
+            - url: "https://www.theguardian.com/culture/rss"
+              title: "Guardian Culture"
+            - url: "https://www.wired.com/feed/rss"
+              title: "Wired"
+            - url: "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"
+              title: "BBC Arts"

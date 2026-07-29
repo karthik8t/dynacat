@@ -1,13 +1,44 @@
 - name: "News"
   columns:
-    # ── Full-width head: Breaking / Top Stories ───────────────────────────
-    # horizontal-cards shows thumbnails — gives the "card with image" look
+    # ── Left: Breaking & Local — compact scannable list ───────────────────
+    - size: "small"
+      widgets:
+        - type: "rss"
+          title: "⚡ Breaking Now"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 15
+          collapse-after: -1
+          feeds:
+            - url: "https://feeds.bbci.co.uk/news/rss.xml"
+              title: "BBC"
+            - url: "https://feeds.reuters.com/reuters/topNews"
+              title: "Reuters"
+            - url: "https://www.aljazeera.com/xml/rss/all.xml"
+              title: "Al Jazeera"
+
+        - type: "rss"
+          title: "🏙️ Telangana & Hyderabad"
+          style: "detailed-list"
+          limit: 8
+          collapse-after: 5
+          feeds:
+            - url: "https://telanganatoday.com/feed"
+              title: "Telangana Today"
+            - url: "https://www.thehindu.com/news/cities/Hyderabad/feeder/default.rss"
+              title: "The Hindu · Hyd"
+            - url: "https://www.sakshipost.com/rss/latest_today.xml"
+              title: "Sakshi Post"
+            - url: "https://timesofindia.indiatimes.com/rssfeeds/7098551.cms"
+              title: "TOI · Hyderabad"
+
+    # ── Center: Hero image cards — World + India ──────────────────────────
     - size: "full"
       widgets:
         - type: "rss"
           title: "🌍 World Headlines"
           style: "horizontal-cards"
-          thumbnail-height: 12
+          thumbnail-height: 14
           limit: 12
           collapse-after: -1
           feeds:
@@ -22,9 +53,9 @@
 
         - type: "rss"
           title: "🇮🇳 India — Top Stories"
-          style: "horizontal-cards"
-          thumbnail-height: 12
-          limit: 12
+          style: "horizontal-cards-2"
+          card-height: 25
+          limit: 8
           collapse-after: -1
           feeds:
             - url: "https://www.thehindu.com/news/national/feeder/default.rss"
@@ -33,44 +64,10 @@
               title: "NDTV"
             - url: "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
               title: "Times of India"
-            - url: "https://www.reddit.com/r/india.rss"
-              title: "r/india"
-
-        - type: "rss"
-          title: "�️ Telangana & Hyderabad"
-          style: "horizontal-cards"
-          thumbnail-height: 12
-          limit: 10
-          collapse-after: -1
-          feeds:
-            - url: "https://telanganatoday.com/feed"
-              title: "Telangana Today"
-            - url: "https://www.sakshipost.com/rss/latest_today.xml"
-              title: "Sakshi Post"
-            - url: "https://www.thehindu.com/news/cities/Hyderabad/feeder/default.rss"
-              title: "The Hindu · Hyderabad"
-            - url: "https://timesofindia.indiatimes.com/rssfeeds/7098551.cms"
-              title: "TOI · Hyderabad"
 
         - type: "group"
-          title: "📰 More News"
+          title: "📰 More Sections"
           widgets:
-            - type: "rss"
-              title: "Science & Technology"
-              style: "horizontal-cards"
-              thumbnail-height: 12
-              limit: 10
-              collapse-after: -1
-              feeds:
-                - url: "https://feeds.bbci.co.uk/news/technology/rss.xml"
-                  title: "BBC Tech"
-                - url: "https://www.theguardian.com/technology/rss"
-                  title: "Guardian Tech"
-                - url: "https://www.sciencedaily.com/rss/top/science.xml"
-                  title: "Science Daily"
-                - url: "https://www.reddit.com/r/technology.rss"
-                  title: "r/technology"
-
             - type: "rss"
               title: "Business & Economy"
               style: "horizontal-cards"
@@ -79,16 +76,28 @@
               collapse-after: -1
               feeds:
                 - url: "https://www.thehindu.com/business/feeder/default.rss"
-                  title: "The Hindu · Business"
+                  title: "The Hindu Business"
                 - url: "https://feeds.feedburner.com/ndtvnews-business"
                   title: "NDTV Business"
                 - url: "https://feeds.reuters.com/reuters/businessNews"
                   title: "Reuters Business"
-                - url: "https://www.reddit.com/r/economy.rss"
-                  title: "r/economy"
 
             - type: "rss"
-              title: "Health & Environment"
+              title: "Science & Environment"
+              style: "horizontal-cards"
+              thumbnail-height: 12
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.sciencedaily.com/rss/top/science.xml"
+                  title: "Science Daily"
+                - url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+                  title: "BBC Science"
+                - url: "https://www.theguardian.com/environment/rss"
+                  title: "Guardian Environment"
+
+            - type: "rss"
+              title: "Health"
               style: "horizontal-cards"
               thumbnail-height: 12
               limit: 10
@@ -96,7 +105,47 @@
               feeds:
                 - url: "https://feeds.bbci.co.uk/news/health/rss.xml"
                   title: "BBC Health"
-                - url: "https://www.theguardian.com/environment/rss"
-                  title: "Guardian Environment"
-                - url: "https://www.reddit.com/r/health.rss"
-                  title: "r/Health"
+                - url: "https://www.thehindu.com/sci-tech/health/feeder/default.rss"
+                  title: "The Hindu Health"
+
+    # ── Right: India deep-dive in detailed-list — more text context ───────
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "🇮🇳 India — In Depth"
+          style: "detailed-list"
+          limit: 12
+          collapse-after: 6
+          feeds:
+            - url: "https://www.thehindu.com/feeder/default.rss"
+              title: "The Hindu"
+            - url: "https://feeds.feedburner.com/ndtvnews-india-news"
+              title: "NDTV"
+            - url: "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
+              title: "Times of India"
+
+        - type: "rss"
+          title: "Opinion & Analysis"
+          style: "detailed-list"
+          limit: 8
+          collapse-after: 5
+          feeds:
+            - url: "https://www.thehindu.com/opinion/feeder/default.rss"
+              title: "The Hindu Opinion"
+            - url: "https://www.theguardian.com/commentisfree/rss"
+              title: "Guardian Opinion"
+            - url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+              title: "BBC World"
+
+        - type: "rss"
+          title: "🌍 International — In Depth"
+          style: "detailed-list"
+          limit: 10
+          collapse-after: 5
+          feeds:
+            - url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+              title: "NYT World"
+            - url: "https://www.theguardian.com/world/rss"
+              title: "The Guardian World"
+            - url: "https://feeds.reuters.com/reuters/worldNews"
+              title: "Reuters World"
