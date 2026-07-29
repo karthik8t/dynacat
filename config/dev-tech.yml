@@ -81,12 +81,19 @@
           channels:
             - "UCsBjURrPoezykLs9EqgamOA" # Fireship
             - "UC29ju8bIPH5as8OGnQzwJyA" # Traversy Media
-            - "UCXuqSBlHAE6Xw-yeJA0Tunw" # Linus Tech Tips
             - "UCR-DXc1voovS8nhAvccRZhg" # Jeff Geerling
             - "UCVls1GmFKf6WlTraIb_IaJg" # DistroTube
             - "UCHnyfMqiRRG1u-2MsSQLbXA" # Veritasium
             - "UCWX3yGbODk2pMOaFnFMKiKg" # NetworkChuck
             - "UC7YOGHUfC1Tb2alpyB9-SGQ" # Theo - t3.gg
+            - "UCVYamHliCI9rw1tHR1xbkfw" # Dave2D
+            - "UCBJycsmduvYEL83R_U4JriQ" # MKBHD
+            - "UCG7J20LhUeLl6y_Emi7OJrA" # MKBHD - The Studio
+            - "UC2J-0g_nxlwcD9JBK1eTleQ" # MKBHD - Auto Focus
+            - "UCXuqSBlHAE6Xw-yeJA0Tunw" # Linus Tech Tips
+            - "UC0vBXGSyV14uvJ4hECDOl0Q" # Techquickie
+            - "UCeeFfhMcJa1kjtfZAGskOCA" # TechLinked
+            - "UCdBK94H6oZT2Q7l0-b0xmMg" # ShortCircuit
 
         - type: "group"
           title: "Community"
