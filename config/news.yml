@@ -1,136 +1,74 @@
 - name: "News"
   columns:
-    # ── Left: Local & National US News ───────────────────────────────────
+    # ── Left: International ───────────────────────────────────────────────
     - size: "small"
       widgets:
         - type: "rss"
-          title: "National News (US)"
+          title: "🌍 International"
           style: "vertical-list"
-          limit: 15
-          collapse-after: 7
+          limit: 20
+          collapse-after: 8
           feeds:
-            - url: "https://feeds.npr.org/1001/rss.xml"
-              title: "NPR Top Stories"
-            - url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-              title: "New York Times"
-            - url: "https://feeds.washingtonpost.com/rss/national"
-              title: "Washington Post"
-            - url: "https://feeds.reuters.com/reuters/topNews"
-              title: "Reuters"
-            - url: "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml"
-              title: "BBC · US & Canada"
+            - url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+              title: "BBC World"
+            - url: "https://www.aljazeera.com/xml/rss/all.xml"
+              title: "Al Jazeera"
+            - url: "https://feeds.reuters.com/reuters/worldNews"
+              title: "Reuters World"
+            - url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+              title: "NYT World"
+            - url: "https://www.theguardian.com/world/rss"
+              title: "The Guardian World"
+            - url: "https://www.reddit.com/r/worldnews.rss"
+              title: "r/worldnews"
 
-        - type: "rss"
-          title: "Local News"
-          style: "vertical-list"
-          limit: 12
-          collapse-after: 6
-          # ----------------------------------------------------------------
-          # Replace these feeds with your city/region's RSS feeds.
-          # Most local TV/newspaper sites publish RSS feeds. Examples below
-          # cover several major metros — keep the ones relevant to you.
-          # ----------------------------------------------------------------
-          feeds:
-            - url: "https://abc7news.com/feed/"
-              title: "ABC7 Bay Area"
-            - url: "https://www.nbclosangeles.com/feed/"
-              title: "NBC Los Angeles"
-            - url: "https://www.nbc12.com/rss/allnews.xml"
-              title: "NBC12 Richmond"
-            - url: "https://www.click2houston.com/rss/news/local/index.rss"
-              title: "Click2Houston"
-            - url: "https://feeds.foxnews.com/foxnews/local"
-              title: "Fox News Local"
-
-    # ── Center: World & General ───────────────────────────────────────────
+    # ── Center: National (India) ──────────────────────────────────────────
     - size: "full"
       widgets:
-        - type: "group"
-          title: "World Headlines"
-          widgets:
-            - type: "rss"
-              title: "AP & Reuters World"
-              style: "horizontal-cards"
-              limit: 10
-              collapse-after: 4
-              feeds:
-                - url: "https://feeds.reuters.com/reuters/worldNews"
-                  title: "Reuters World"
-                - url: "https://feeds.bbci.co.uk/news/world/rss.xml"
-                  title: "BBC World"
-                - url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
-                  title: "NYT World"
-                - url: "https://feeds.npr.org/1004/rss.xml"
-                  title: "NPR World"
-
-            - type: "rss"
-              title: "Science & Space"
-              style: "horizontal-cards"
-              limit: 8
-              collapse-after: 4
-              feeds:
-                - url: "https://www.sciencedaily.com/rss/top/science.xml"
-                  title: "Science Daily"
-                - url: "https://feeds.feedburner.com/nasa/breaking-news"
-                  title: "NASA Breaking News"
-                - url: "https://www.reddit.com/r/science.rss"
-                  title: "r/science"
-                - url: "https://www.reddit.com/r/space.rss"
-                  title: "r/space"
+        - type: "rss"
+          title: "🇮🇳 National — India"
+          style: "horizontal-cards"
+          limit: 16
+          collapse-after: 4
+          feeds:
+            - url: "https://www.thehindu.com/news/national/feeder/default.rss"
+              title: "The Hindu · India"
+            - url: "https://feeds.feedburner.com/ndtvnews-india-news"
+              title: "NDTV India"
+            - url: "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
+              title: "Times of India"
+            - url: "https://www.thehindu.com/feeder/default.rss"
+              title: "The Hindu · Top Stories"
+            - url: "https://www.reddit.com/r/india.rss"
+              title: "r/india"
 
         - type: "rss"
-          title: "Politics & Society"
+          title: "India — Business & Policy"
           style: "detailed-list"
           limit: 10
           collapse-after: 5
           feeds:
-            - url: "https://feeds.npr.org/1014/rss.xml"
-              title: "NPR Politics"
-            - url: "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
-              title: "NYT Politics"
-            - url: "https://www.reddit.com/r/politics.rss"
-              title: "r/politics"
-            - url: "https://www.reddit.com/r/worldnews.rss"
-              title: "r/worldnews"
+            - url: "https://feeds.feedburner.com/ndtvnews-business"
+              title: "NDTV Business"
+            - url: "https://timesofindia.indiatimes.com/rssfeeds/1898055.cms"
+              title: "TOI · Business"
+            - url: "https://www.thehindu.com/business/feeder/default.rss"
+              title: "The Hindu · Business"
 
-    # ── Right: Entertainment & Lifestyle ─────────────────────────────────
+    # ── Right: Local / Regional (Telangana) ──────────────────────────────
     - size: "small"
       widgets:
         - type: "rss"
-          title: "Health & Wellness"
+          title: "🏙️ Telangana & Hyderabad"
           style: "vertical-list"
-          limit: 10
-          collapse-after: 5
+          limit: 20
+          collapse-after: 8
           feeds:
-            - url: "https://www.health.com/feed"
-              title: "Health.com"
-            - url: "https://feeds.webmd.com/rss/rss.aspx?RSSSource=RSS_PUBLIC"
-              title: "WebMD"
-            - url: "https://www.reddit.com/r/Health.rss"
-              title: "r/Health"
-
-        - type: "rss"
-          title: "Entertainment"
-          style: "vertical-list"
-          limit: 10
-          collapse-after: 5
-          feeds:
-            - url: "https://variety.com/feed/"
-              title: "Variety"
-            - url: "https://www.rollingstone.com/feed/"
-              title: "Rolling Stone"
-            - url: "https://www.reddit.com/r/entertainment.rss"
-              title: "r/entertainment"
-
-        - type: "rss"
-          title: "Sports"
-          style: "vertical-list"
-          limit: 10
-          collapse-after: 5
-          feeds:
-            - url: "https://www.espn.com/espn/rss/news"
-              title: "ESPN"
-            - url: "https://www.reddit.com/r/sports.rss"
-              title: "r/sports"
-            - url: "https://www.reddit.com/r/nba.rss"
-              title: "r/nba"
+            - url: "https://telanganatoday.com/feed"
+              title: "Telangana Today"
+            - url: "https://www.sakshipost.com/rss/latest_today.xml"
+              title: "Sakshi Post"
+            - url: "https://www.thehindu.com/news/cities/Hyderabad/feeder/default.rss"
+              title: "The Hindu · Hyderabad"
+            - url: "https://timesofindia.indiatimes.com/rssfeeds/7098551.cms"
+              title: "TOI · Hyderabad"
