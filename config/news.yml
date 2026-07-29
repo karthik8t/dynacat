@@ -1,68 +1,47 @@
 - name: "News"
   columns:
-    # ── Left: International ───────────────────────────────────────────────
-    - size: "small"
+    # ── Full-width head: Breaking / Top Stories ───────────────────────────
+    # horizontal-cards shows thumbnails — gives the "card with image" look
+    - size: "full"
       widgets:
         - type: "rss"
-          title: "🌍 International"
-          style: "vertical-list"
-          limit: 20
-          collapse-after: 8
+          title: "🌍 World Headlines"
+          style: "horizontal-cards"
+          thumbnail-height: 12
+          limit: 12
+          collapse-after: -1
           feeds:
             - url: "https://feeds.bbci.co.uk/news/world/rss.xml"
               title: "BBC World"
             - url: "https://www.aljazeera.com/xml/rss/all.xml"
               title: "Al Jazeera"
             - url: "https://feeds.reuters.com/reuters/worldNews"
-              title: "Reuters World"
-            - url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
-              title: "NYT World"
+              title: "Reuters"
             - url: "https://www.theguardian.com/world/rss"
-              title: "The Guardian World"
-            - url: "https://www.reddit.com/r/worldnews.rss"
-              title: "r/worldnews"
+              title: "The Guardian"
 
-    # ── Center: National (India) ──────────────────────────────────────────
-    - size: "full"
-      widgets:
         - type: "rss"
-          title: "🇮🇳 National — India"
+          title: "🇮🇳 India — Top Stories"
           style: "horizontal-cards"
-          limit: 16
-          collapse-after: 4
+          thumbnail-height: 12
+          limit: 12
+          collapse-after: -1
           feeds:
             - url: "https://www.thehindu.com/news/national/feeder/default.rss"
-              title: "The Hindu · India"
+              title: "The Hindu"
             - url: "https://feeds.feedburner.com/ndtvnews-india-news"
-              title: "NDTV India"
+              title: "NDTV"
             - url: "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
               title: "Times of India"
-            - url: "https://www.thehindu.com/feeder/default.rss"
-              title: "The Hindu · Top Stories"
             - url: "https://www.reddit.com/r/india.rss"
               title: "r/india"
 
         - type: "rss"
-          title: "India — Business & Policy"
-          style: "detailed-list"
+          title: "�️ Telangana & Hyderabad"
+          style: "horizontal-cards"
+          thumbnail-height: 12
           limit: 10
-          collapse-after: 5
-          feeds:
-            - url: "https://feeds.feedburner.com/ndtvnews-business"
-              title: "NDTV Business"
-            - url: "https://timesofindia.indiatimes.com/rssfeeds/1898055.cms"
-              title: "TOI · Business"
-            - url: "https://www.thehindu.com/business/feeder/default.rss"
-              title: "The Hindu · Business"
-
-    # ── Right: Local / Regional (Telangana) ──────────────────────────────
-    - size: "small"
-      widgets:
-        - type: "rss"
-          title: "🏙️ Telangana & Hyderabad"
-          style: "vertical-list"
-          limit: 20
-          collapse-after: 8
+          collapse-after: -1
           feeds:
             - url: "https://telanganatoday.com/feed"
               title: "Telangana Today"
@@ -72,3 +51,52 @@
               title: "The Hindu · Hyderabad"
             - url: "https://timesofindia.indiatimes.com/rssfeeds/7098551.cms"
               title: "TOI · Hyderabad"
+
+        - type: "group"
+          title: "📰 More News"
+          widgets:
+            - type: "rss"
+              title: "Science & Technology"
+              style: "horizontal-cards"
+              thumbnail-height: 12
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://feeds.bbci.co.uk/news/technology/rss.xml"
+                  title: "BBC Tech"
+                - url: "https://www.theguardian.com/technology/rss"
+                  title: "Guardian Tech"
+                - url: "https://www.sciencedaily.com/rss/top/science.xml"
+                  title: "Science Daily"
+                - url: "https://www.reddit.com/r/technology.rss"
+                  title: "r/technology"
+
+            - type: "rss"
+              title: "Business & Economy"
+              style: "horizontal-cards"
+              thumbnail-height: 12
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.thehindu.com/business/feeder/default.rss"
+                  title: "The Hindu · Business"
+                - url: "https://feeds.feedburner.com/ndtvnews-business"
+                  title: "NDTV Business"
+                - url: "https://feeds.reuters.com/reuters/businessNews"
+                  title: "Reuters Business"
+                - url: "https://www.reddit.com/r/economy.rss"
+                  title: "r/economy"
+
+            - type: "rss"
+              title: "Health & Environment"
+              style: "horizontal-cards"
+              thumbnail-height: 12
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://feeds.bbci.co.uk/news/health/rss.xml"
+                  title: "BBC Health"
+                - url: "https://www.theguardian.com/environment/rss"
+                  title: "Guardian Environment"
+                - url: "https://www.reddit.com/r/health.rss"
+                  title: "r/Health"

@@ -1,0 +1,177 @@
+- name: "Entertainment"
+  columns:
+    # ── Left: Movies & Reddit ─────────────────────────────────────────────
+    - size: "small"
+      widgets:
+        - type: "reddit"
+          subreddit: "movies"
+          style: "vertical-cards"
+          show-thumbnails: true
+          show-flairs: true
+          limit: 10
+          collapse-after: -1
+          sort-by: "hot"
+
+        - type: "reddit"
+          subreddit: "tollywood"
+          style: "vertical-cards"
+          show-thumbnails: true
+          limit: 8
+          collapse-after: 5
+          sort-by: "hot"
+
+    # ── Center: Cards Feed ────────────────────────────────────────────────
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "🎬 Movies & TV"
+          style: "horizontal-cards"
+          thumbnail-height: 13
+          limit: 12
+          collapse-after: -1
+          feeds:
+            - url: "https://variety.com/feed/"
+              title: "Variety"
+            - url: "https://deadline.com/feed/"
+              title: "Deadline"
+            - url: "https://www.hollywoodreporter.com/feed/"
+              title: "Hollywood Reporter"
+            - url: "https://www.reddit.com/r/movies.rss"
+              title: "r/movies"
+            - url: "https://www.reddit.com/r/television.rss"
+              title: "r/television"
+
+        - type: "group"
+          title: "🎵 Music, OTT & More"
+          widgets:
+            - type: "rss"
+              title: "Music"
+              style: "horizontal-cards"
+              thumbnail-height: 13
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.rollingstone.com/music/feed/"
+                  title: "Rolling Stone"
+                - url: "https://pitchfork.com/rss/news/"
+                  title: "Pitchfork"
+                - url: "https://www.reddit.com/r/Music.rss"
+                  title: "r/Music"
+
+            - type: "rss"
+              title: "Bollywood & Tollywood"
+              style: "horizontal-cards"
+              thumbnail-height: 13
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms"
+                  title: "TOI Entertainment"
+                - url: "https://feeds.feedburner.com/ndtvnews-entertainment"
+                  title: "NDTV Entertainment"
+                - url: "https://www.thehindu.com/entertainment/feeder/default.rss"
+                  title: "The Hindu Entertainment"
+
+            - type: "rss"
+              title: "Anime & Animation"
+              style: "horizontal-cards"
+              thumbnail-height: 13
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.reddit.com/r/anime.rss"
+                  title: "r/anime"
+                - url: "https://www.animenewsnetwork.com/all/rss.xml?ann-edition=us"
+                  title: "Anime News Network"
+
+        - type: "group"
+          title: "📚 Education & Learning"
+          widgets:
+            - type: "rss"
+              title: "Education News"
+              style: "horizontal-cards"
+              thumbnail-height: 13
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.thehindu.com/education/feeder/default.rss"
+                  title: "The Hindu Education"
+                - url: "https://timesofindia.indiatimes.com/rssfeeds/913168846.cms"
+                  title: "TOI Education"
+                - url: "https://www.reddit.com/r/India_StudyAbroad.rss"
+                  title: "r/India_StudyAbroad"
+                - url: "https://www.reddit.com/r/learnprogramming.rss"
+                  title: "r/learnprogramming"
+
+            - type: "rss"
+              title: "Science & Space"
+              style: "horizontal-cards"
+              thumbnail-height: 13
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.sciencedaily.com/rss/top/science.xml"
+                  title: "Science Daily"
+                - url: "https://www.reddit.com/r/science.rss"
+                  title: "r/science"
+                - url: "https://www.reddit.com/r/space.rss"
+                  title: "r/space"
+                - url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+                  title: "BBC Science"
+
+        - type: "group"
+          title: "🚗 Vehicles & Technology"
+          widgets:
+            - type: "rss"
+              title: "Cars & EVs"
+              style: "horizontal-cards"
+              thumbnail-height: 13
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.autocar.co.uk/rss"
+                  title: "Autocar"
+                - url: "https://electrek.co/feed/"
+                  title: "Electrek (EVs)"
+                - url: "https://www.motortrend.com/feeds/rss/"
+                  title: "MotorTrend"
+                - url: "https://www.reddit.com/r/cars.rss"
+                  title: "r/cars"
+                - url: "https://www.reddit.com/r/electricvehicles.rss"
+                  title: "r/electricvehicles"
+
+            - type: "rss"
+              title: "Tech & Gadgets"
+              style: "horizontal-cards"
+              thumbnail-height: 13
+              limit: 10
+              collapse-after: -1
+              feeds:
+                - url: "https://www.theverge.com/rss/index.xml"
+                  title: "The Verge"
+                - url: "https://feeds.arstechnica.com/arstechnica/index"
+                  title: "Ars Technica"
+                - url: "https://www.wired.com/feed/rss"
+                  title: "Wired"
+                - url: "https://www.reddit.com/r/gadgets.rss"
+                  title: "r/gadgets"
+
+    # ── Right: Community Reddit ───────────────────────────────────────────
+    - size: "small"
+      widgets:
+        - type: "reddit"
+          subreddit: "television"
+          style: "vertical-cards"
+          show-thumbnails: true
+          show-flairs: true
+          limit: 10
+          collapse-after: -1
+          sort-by: "hot"
+
+        - type: "reddit"
+          subreddit: "cars"
+          style: "vertical-cards"
+          show-thumbnails: true
+          limit: 8
+          collapse-after: 5
+          sort-by: "hot"

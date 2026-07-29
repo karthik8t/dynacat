@@ -27,4 +27,7 @@ pages:
   - $include: home.yml
   - $include: dev-tech.yml
   - $include: news.yml
+  - $include: news-sports-games.yml
+  - $include: news-entertainment.yml
+  - $include: news-politics-world.yml
   - $include: markets.yml
