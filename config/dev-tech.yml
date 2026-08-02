@@ -1,5 +1,6 @@
 - name: "Dev & Tech"
   columns:
+    # ── Left: bookmarks + releases — utility sidebar ──────────────────────
     - size: "small"
       widgets:
         - type: "bookmarks"
@@ -46,9 +47,6 @@
             - title: "Self-Hosted"
               color: "270 50 60"
               links:
-                - title: "r/selfhosted"
-                  url: "https://www.reddit.com/r/selfhosted"
-                  icon: "si:reddit"
                 - title: "Awesome Selfhosted"
                   url: "https://awesome-selfhosted.net"
                   icon: "mdi:star-outline"
@@ -58,6 +56,9 @@
                 - title: "LinuxServer.io"
                   url: "https://www.linuxserver.io"
                   icon: "si:linuxserver"
+                - title: "GitHub Trending"
+                  url: "https://github.com/trending"
+                  icon: "si:github"
 
         - type: "releases"
           title: "Latest Releases"
@@ -72,6 +73,7 @@
             - dani-garcia/vaultwarden
             - AdguardTeam/AdGuardHome
 
+    # ── Center: Videos + HN + Lobsters ───────────────────────────────────
     - size: "full"
       widgets:
         - type: "videos"
@@ -95,49 +97,32 @@
             - "UCeeFfhMcJa1kjtfZAGskOCA" # TechLinked
             - "UCdBK94H6oZT2Q7l0-b0xmMg" # ShortCircuit
 
-        - type: "group"
-          title: "Community"
+        - type: "split-column"
           widgets:
-            - type: "rss"
-              title: "Self-Hosted & LocalLLaMA"
-              style: "horizontal-cards"
-              limit: 12
-              collapse-after: 4
-              feeds:
-                - url: "https://www.reddit.com/r/selfhosted.rss"
-                  title: "r/selfhosted"
-                - url: "https://www.reddit.com/r/LocalLLaMA.rss"
-                  title: "r/LocalLLaMA"
-                - url: "https://www.reddit.com/r/homelab.rss"
-                  title: "r/homelab"
-                - url: "https://www.reddit.com/r/opensource.rss"
-                  title: "r/opensource"
+            - type: "hacker-news"
+              title: "Hacker News"
+              limit: 15
+              collapse-after: 8
+              sort-by: "top"
+              extra-sort-by: "engagement"
 
-            - type: "rss"
-              title: "Dev Blogs"
-              style: "detailed-list"
-              limit: 10
-              collapse-after: 5
-              feeds:
-                - url: "https://dev.to/feed"
-                  title: "DEV Community"
-                - url: "https://news.ycombinator.com/rss"
-                  title: "Hacker News"
-                - url: "https://blog.github.com/all.atom"
-                  title: "GitHub Blog"
+            - type: "lobsters"
+              title: "Lobsters"
+              limit: 15
+              collapse-after: 8
+              sort-by: "hot"
 
+    # ── Right: Dev news — detailed read ───────────────────────────────────
     - size: "small"
       widgets:
         - type: "rss"
           title: "Tech News"
-          style: "vertical-list"
-          limit: 15
-          collapse-after: 8
+          style: "detailed-list"
+          limit: 10
+          collapse-after: 6
           feeds:
-            - url: "https://news.ycombinator.com/rss"
-              title: "Hacker News"
-            - url: "https://dev.to/feed"
-              title: "DEV Community"
+            - url: "https://thenewstack.io/feed/"
+              title: "The New Stack"
             - url: "https://www.wired.com/feed/rss"
               title: "Wired"
             - url: "https://feeds.arstechnica.com/arstechnica/index"
@@ -145,9 +130,18 @@
             - url: "https://www.theverge.com/rss/index.xml"
               title: "The Verge"
 
-        - type: "reddit"
-          subreddit: "technology"
-          style: "vertical-cards"
-          show-thumbnails: true
-          collapse-after: 5
-          sort-by: "hot"
+        - type: "rss"
+          title: "Dev Blogs"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 12
+          collapse-after: -1
+          feeds:
+            - url: "https://dev.to/feed"
+              title: "DEV Community"
+            - url: "https://blog.github.com/all.atom"
+              title: "GitHub Blog"
+            - url: "https://changelog.com/news.rss"
+              title: "Changelog"
+            - url: "https://news.ycombinator.com/rss"
+              title: "Hacker News"

@@ -1,0 +1,150 @@
+- name: "Open Source"
+  columns:
+    # ── Left: GitHub Trending — the daily discovery feed ─────────────────
+    # mshibanami's unofficial GitHub Trending RSS, updated daily
+    - size: "small"
+      widgets:
+        - type: "rss"
+          title: "🔥 GitHub Trending · Today"
+          style: "detailed-list"
+          limit: 15
+          collapse-after: -1
+          feeds:
+            - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml"
+              title: "All Languages"
+
+        - type: "rss"
+          title: "📅 GitHub Trending · This Week"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 15
+          collapse-after: 8
+          feeds:
+            - url: "https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml"
+              title: "Weekly"
+
+    # ── Center: Open source news — image cards + split language feeds ─────
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "📰 Open Source News"
+          style: "horizontal-cards"
+          thumbnail-height: 13
+          limit: 12
+          collapse-after: -1
+          feeds:
+            - url: "https://thenewstack.io/feed/"
+              title: "The New Stack"
+            - url: "https://changelog.com/news.rss"
+              title: "Changelog"
+            - url: "https://opensource.com/feed"
+              title: "Opensource.com"
+            - url: "https://lwn.net/headlines/rss"
+              title: "LWN.net"
+            - url: "https://blog.opensource.org/feed/"
+              title: "OSI Blog"
+
+        - type: "split-column"
+          widgets:
+            - type: "rss"
+              title: "🤖 AI / ML Projects"
+              style: "detailed-list"
+              limit: 10
+              collapse-after: 6
+              feeds:
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/python.xml"
+                  title: "Python Trending"
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/jupyter-notebook.xml"
+                  title: "Notebooks Trending"
+                - url: "https://huggingface.co/blog/feed.xml"
+                  title: "Hugging Face Blog"
+
+            - type: "rss"
+              title: "⚙️ Systems & Infrastructure"
+              style: "detailed-list"
+              limit: 10
+              collapse-after: 6
+              feeds:
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/go.xml"
+                  title: "Go Trending"
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/rust.xml"
+                  title: "Rust Trending"
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/c.xml"
+                  title: "C Trending"
+
+        - type: "split-column"
+          widgets:
+            - type: "rss"
+              title: "🌐 Web & JS"
+              style: "detailed-list"
+              limit: 10
+              collapse-after: 6
+              feeds:
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/typescript.xml"
+                  title: "TypeScript Trending"
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/javascript.xml"
+                  title: "JavaScript Trending"
+
+            - type: "rss"
+              title: "☕ JVM & Shell"
+              style: "detailed-list"
+              limit: 10
+              collapse-after: 6
+              feeds:
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/java.xml"
+                  title: "Java Trending"
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/kotlin.xml"
+                  title: "Kotlin Trending"
+                - url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/shell.xml"
+                  title: "Shell Trending"
+
+    # ── Right: Self-hosted, homelab — stuff you can actually run ──────────
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "🏠 Self-Hosted & Homelab"
+          style: "horizontal-cards-2"
+          card-height: 24
+          limit: 8
+          collapse-after: -1
+          feeds:
+            - url: "https://selfh.st/rss/"
+              title: "selfh.st"
+            - url: "https://blog.linuxserver.io/feed/"
+              title: "LinuxServer.io"
+            - url: "https://noted.lol/rss/"
+              title: "Noted.lol"
+
+        - type: "releases"
+          title: "🚀 Project Releases to Watch"
+          cache: 4h
+          collapse-after: 8
+          show-source-icon: true
+          repositories:
+            - nicehash/NiceHashQuickMiner
+            - containers/podman
+            - janhq/jan
+            - local-ai/LocalAI
+            - open-webui/open-webui
+            - langgenius/dify
+            - lobehub/lobe-chat
+            - twentyhq/twenty
+            - makeplane/plane
+            - calcom/cal.com
+            - formbricks/formbricks
+            - appwrite/appwrite
+
+        - type: "rss"
+          title: "🔧 DevOps & Cloud Native"
+          style: "detailed-list"
+          limit: 10
+          collapse-after: 6
+          feeds:
+            - url: "https://thenewstack.io/feed/"
+              title: "The New Stack"
+            - url: "https://www.cncf.io/feed/"
+              title: "CNCF Blog"
+            - url: "https://kubernetes.io/feed.xml"
+              title: "Kubernetes Blog"
+            - url: "https://www.docker.com/blog/feed/"
+              title: "Docker Blog"

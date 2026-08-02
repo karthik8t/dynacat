@@ -26,6 +26,8 @@ branding:
 pages:
   - $include: home.yml
   - $include: dev-tech.yml
+  - $include: open-source.yml
+  - $include: dev-learning.yml
   - $include: news.yml
   - $include: news-sports-games.yml
   - $include: news-entertainment.yml

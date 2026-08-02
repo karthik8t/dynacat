@@ -1,0 +1,172 @@
+- name: "Dev Learning"
+  columns:
+    # ── Left: Tutorials & deep-dives — image cards, rich content ─────────
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "📖 Tutorials & Articles"
+          style: "horizontal-cards"
+          thumbnail-height: 14
+          limit: 12
+          collapse-after: -1
+          feeds:
+            - url: "https://www.smashingmagazine.com/feed/"
+              title: "Smashing Magazine"
+            - url: "https://css-tricks.com/feed/"
+              title: "CSS-Tricks"
+            - url: "https://web.dev/feed.xml"
+              title: "web.dev"
+            - url: "https://dev.to/feed"
+              title: "DEV Community"
+
+        - type: "split-column"
+          widgets:
+            - type: "rss"
+              title: "🎨 Frontend"
+              style: "detailed-list"
+              limit: 10
+              collapse-after: 6
+              feeds:
+                - url: "https://www.smashingmagazine.com/feed/"
+                  title: "Smashing"
+                - url: "https://css-tricks.com/feed/"
+                  title: "CSS-Tricks"
+                - url: "https://web.dev/feed.xml"
+                  title: "web.dev"
+                - url: "https://frontendfront.com/feed/stories"
+                  title: "Frontend Front"
+
+            - type: "rss"
+              title: "⚙️ Backend & APIs"
+              style: "detailed-list"
+              limit: 10
+              collapse-after: 6
+              feeds:
+                - url: "https://feeds.feedburner.com/ThomasHunterII"
+                  title: "Thomas Hunter II"
+                - url: "https://thenewstack.io/feed/"
+                  title: "The New Stack"
+                - url: "https://blog.logrocket.com/feed/"
+                  title: "LogRocket"
+                - url: "https://changelog.com/news.rss"
+                  title: "Changelog"
+
+        - type: "rss"
+          title: "🔐 Security & Best Practices"
+          style: "detailed-list"
+          limit: 8
+          collapse-after: 5
+          feeds:
+            - url: "https://feeds.feedburner.com/TheHackersNews"
+              title: "The Hacker News"
+            - url: "https://portswigger.net/daily-swig/rss"
+              title: "PortSwigger Daily"
+            - url: "https://blog.cloudflare.com/rss/"
+              title: "Cloudflare Blog"
+            - url: "https://github.blog/feed/"
+              title: "GitHub Blog"
+
+    # ── Center: Architecture + System Design + AI Learning ────────────────
+    - size: "full"
+      widgets:
+        - type: "rss"
+          title: "🏗️ System Design & Architecture"
+          style: "horizontal-cards-2"
+          card-height: 26
+          limit: 8
+          collapse-after: -1
+          feeds:
+            - url: "https://martinfowler.com/feed.atom"
+              title: "Martin Fowler"
+            - url: "https://blog.bytebytego.com/feed"
+              title: "ByteByteGo"
+            - url: "https://highscalability.com/rss/"
+              title: "High Scalability"
+            - url: "https://newsletter.pragmaticengineer.com/feed"
+              title: "Pragmatic Engineer"
+
+        - type: "rss"
+          title: "🤖 AI & ML for Developers"
+          style: "detailed-list"
+          limit: 10
+          collapse-after: 6
+          feeds:
+            - url: "https://huggingface.co/blog/feed.xml"
+              title: "Hugging Face"
+            - url: "https://openai.com/blog/rss.xml"
+              title: "OpenAI Blog"
+            - url: "https://blogs.microsoft.com/ai/feed/"
+              title: "Microsoft AI"
+            - url: "https://research.google/blog/rss/"
+              title: "Google Research"
+            - url: "https://bair.berkeley.edu/blog/feed.xml"
+              title: "BAIR"
+
+        - type: "split-column"
+          widgets:
+            - type: "rss"
+              title: "🦀 Rust & Go"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
+              feeds:
+                - url: "https://blog.rust-lang.org/feed.xml"
+                  title: "Rust Blog"
+                - url: "https://go.dev/blog/feed.atom"
+                  title: "Go Blog"
+                - url: "https://this-week-in-rust.org/rss.xml"
+                  title: "This Week in Rust"
+
+            - type: "rss"
+              title: "🐍 Python & Data"
+              style: "detailed-list"
+              limit: 8
+              collapse-after: 5
+              feeds:
+                - url: "https://realpython.com/atom.xml"
+                  title: "Real Python"
+                - url: "https://pythonweekly.com/archive/rss.xml"
+                  title: "Python Weekly"
+                - url: "https://feeds.feedburner.com/kdnuggets-data-mining-analytics"
+                  title: "KDnuggets"
+
+    # ── Right: Quick inspiration — compact scan ───────────────────────────
+    - size: "small"
+      widgets:
+        - type: "hacker-news"
+          title: "💡 HN — Ask & Show"
+          limit: 15
+          collapse-after: -1
+          sort-by: "new"
+
+        - type: "rss"
+          title: "🎯 Project Ideas & Inspiration"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 15
+          collapse-after: -1
+          feeds:
+            - url: "https://changelog.com/news.rss"
+              title: "Changelog"
+            - url: "https://thenewstack.io/feed/"
+              title: "The New Stack"
+            - url: "https://lobste.rs/rss"
+              title: "Lobsters"
+            - url: "https://dev.to/feed/tag/showdev"
+              title: "DEV — Show Dev"
+            - url: "https://dev.to/feed/tag/opensource"
+              title: "DEV — Open Source"
+
+        - type: "rss"
+          title: "📐 UI / UX & Design"
+          style: "vertical-list"
+          single-line-titles: true
+          limit: 10
+          collapse-after: 6
+          feeds:
+            - url: "https://uxdesign.cc/feed"
+              title: "UX Collective"
+            - url: "https://www.smashingmagazine.com/feed/"
+              title: "Smashing"
+            - url: "https://alistapart.com/main/feed/"
+              title: "A List Apart"
